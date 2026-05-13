@@ -1,5 +1,29 @@
-# Vue 3 + TypeScript + Vite
+# Vue3-TS-Template_V2
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Vue3 + TS 模板(V2)
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+```bash
+chore: `npm create vite Vue3-TS-Template_V2 --template vue`
+```
+
+## Project Setup
+
+```sh
+npm install
+```
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
