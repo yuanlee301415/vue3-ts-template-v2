@@ -1,0 +1,23 @@
+{
+  // 用户
+  "users": [
+    {
+      "id": 1,
+      "userName": "Bret",
+      "realName": "Leanne Graham",
+      "email": "Sincere@april.biz"
+    },
+    {
+      "id": 2,
+      "userName": "Antonette",
+      "realName": "Ervin Howell",
+      "email": "Shanna@melissa.tv"
+    },
+    {
+      "id": 3,
+      "userName": "Samantha",
+      "realName": "Clementine Bauch",
+      "email": "Nathan@yesenia.net"
+    }
+  ]
+}
