@@ -10,8 +10,7 @@ interface UserState {
   lastUpdateTime?: number
 }
 
-export const useUserStore = defineStore({
-  id: 'user',
+export const useUserStore = defineStore('user', {
   state: (): UserState => ({
     userInfo:
       import.meta.env.VITE_PERMISSION && JSON.parse(import.meta.env.VITE_PERMISSION)
