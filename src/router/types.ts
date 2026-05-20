@@ -1,9 +1,7 @@
 import type { RouteMeta, RouteRecordRaw } from 'vue-router'
 import type { DefineComponent } from 'vue'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-export type Component<T = any> = DefineComponent | (() => Promise<T>)
+export type Component<T = unknown> = DefineComponent | (() => Promise<T>)
 
 export type AppRouteMeta = RouteMeta &
   Partial<{
