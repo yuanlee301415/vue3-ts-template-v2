@@ -1,4 +1,4 @@
-import type { UserConfig, ConfigEnv } from "vite";
+import type { UserConfig, ConfigEnv, ProxyOptions } from "vite";
 
 import { defineConfig, loadEnv } from "vite";
 import {fileURLToPath, URL} from "node:url";
@@ -11,6 +11,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, cwd()) as unknown as ImportMetaEnv;
   const {
     VITE_INTERNAL_VERSION,
+    VITE_PORT,
+    VITE_PROXY,
+    VITE_BASE_API
   } = env;
 
   const __APP_VERSION__ = [pkg.version, VITE_INTERNAL_VERSION].join(".");
@@ -27,6 +30,30 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     define: {
       __APP_VERSION__: JSON.stringify(__APP_VERSION__),
       __APP_BUILD_TIME__: JSON.stringify(__APP_BUILD_TIME__),
+    },
+    server: {
+      port: Number(VITE_PORT),
+      proxy: {
+        '/api': createProxyConfig(VITE_PROXY, VITE_BASE_API)
+      }
     }
   }
 })
+
+function createProxyConfig(target: string, baseUrl: string): ProxyOptions {
+  return {
+    target,
+    changeOrigin: true,
+    rewrite: (path) => path.replace(baseUrl, ''),
+    configure: (proxy) => {
+      proxy.on('proxyReq', (proxyReq) => {
+        proxyReq.removeHeader('origin')
+        proxyReq.removeHeader('referer')
+      })
+      proxy.on('proxyRes', (proxyRes) => {
+        proxyRes.headers['cache-control'] = 'no-cache'
+        proxyRes.headers['x-accel-buffering'] = 'no'
+      })
+    },
+  }
+}
