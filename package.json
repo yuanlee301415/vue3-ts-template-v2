@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview",
+    "preview": "npm run build && vite preview",
+    "preview:dist": "vite preview",
     "lint": "eslint ./src --fix --cache",
     "format": "prettier --write --experimental-cli src/",
     "server": "npx json-server server/db.json5 --port 5001"
