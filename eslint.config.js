@@ -3,6 +3,8 @@ import globals from 'globals'
 import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import vueTsEslintConfig from '@vue/eslint-config-typescript'
+
 
 export default defineConfig([
   {
@@ -24,5 +26,6 @@ export default defineConfig([
 
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
-  skipFormatting,
+  ...vueTsEslintConfig(),
+  skipFormatting
 ])
