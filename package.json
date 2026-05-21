@@ -1,5 +1,6 @@
 {
   "name": "vue3-ts-template-v2",
+  "description": "Vue3 + TS 模板(V2)",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -37,6 +38,9 @@
   },
   "engines": {
     "node": ">=20.20.0",
-    "pnpm": ">=10.8.0"
+    "npm": ">=10.8.0"
+  },
+  "repository": {
+    "url": "https://github.com/yuanlee301415/vue3-ts-template-v2"
   }
 }
