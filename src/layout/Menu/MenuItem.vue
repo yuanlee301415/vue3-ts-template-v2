@@ -1,22 +1,12 @@
 <template>
-  <dl
-    v-if="item.meta && item.meta.hiddenMenu !== true"
-    :class="{ open: open }"
-    :style="{ textIndent: depth + 'em' }"
-  >
+  <dl v-if="item.meta && item.meta.hiddenMenu !== true" :class="{ open: open }" :style="{ textIndent: depth + 'em' }">
     <template v-if="item.children && item.meta.hiddenChildrenInMenu !== true">
       <dt @click="handleToggleOpen">
         <span>{{ item.meta.title }}</span
         ><i />
       </dt>
       <dd>
-        <MenuItem
-          v-for="child of item.children"
-          :key="child.name"
-          :item="child"
-          :depth="depth + 1"
-          :fullPath="[fullPath, child.path].join('/')"
-        />
+        <MenuItem v-for="child of item.children" :key="child.name" :item="child" :depth="depth + 1" :fullPath="[fullPath, child.path].join('/')" />
       </dd>
     </template>
     <template v-else>
@@ -48,8 +38,8 @@ watch(
     open.value = initOpen()
   },
   {
-    immediate: true
-  }
+    immediate: true,
+  },
 )
 
 function initOpen(): boolean {

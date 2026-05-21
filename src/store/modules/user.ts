@@ -17,13 +17,13 @@ export const useUserStore = defineStore('user', {
         ? null
         : new UserInfoModel({ userId: 0, userName: 'Guest', realName: '游客' }),
     token: undefined,
-    lastUpdateTime: undefined
+    lastUpdateTime: undefined,
   }),
 
   getters: {
     getUserInfo(): UserInfoModel {
       return this.userInfo ?? (Object.create(null) as UserInfoModel)
-    }
+    },
   },
 
   actions: {
@@ -37,8 +37,8 @@ export const useUserStore = defineStore('user', {
       console.log('getUserInfoAction>data:', data)
       this.setUserInfo(data)
       return data
-    }
-  }
+    },
+  },
 })
 
 export function useUserStoreWithOut() {

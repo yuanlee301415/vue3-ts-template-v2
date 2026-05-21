@@ -9,16 +9,16 @@ const ABOUT_ROUTE: AppRouteRecordRaw = {
   component: LAYOUT,
   meta: {
     title: '关于',
-    hiddenChildrenInMenu: true
+    hiddenChildrenInMenu: true,
   },
   children: [
     {
       path: '',
       name: 'AboutPage',
       component: () => import('@/views/About.vue'),
-      meta: {}
-    }
-  ]
+      meta: {},
+    },
+  ],
 }
 
 export default ABOUT_ROUTE

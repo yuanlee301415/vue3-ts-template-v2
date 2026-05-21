@@ -8,7 +8,7 @@ const TEST_ROUTE: AppRouteRecordRaw = {
   component: LAYOUT,
   redirect: '/test/a',
   meta: {
-    title: 'Test'
+    title: 'Test',
   },
   children: [
     {
@@ -16,18 +16,18 @@ const TEST_ROUTE: AppRouteRecordRaw = {
       name: 'TestA',
       component: () => import('@/views/test/A.vue'),
       meta: {
-        title: 'TestA'
-      }
+        title: 'TestA',
+      },
     },
     {
       path: 'b',
       name: 'TestB',
       component: () => import('@/views/test/B.vue'),
       meta: {
-        title: 'TestB'
-      }
-    }
-  ]
+        title: 'TestB',
+      },
+    },
+  ],
 }
 
 export default TEST_ROUTE

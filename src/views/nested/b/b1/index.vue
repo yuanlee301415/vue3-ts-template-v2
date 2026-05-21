@@ -4,5 +4,4 @@
 
 <script lang="ts" setup>
 defineOptions({ name: 'B_1' })
-
 </script>
