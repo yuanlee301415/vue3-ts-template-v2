@@ -2,7 +2,7 @@
   "name": "vue3-ts-template-v2",
   "description": "Vue3 + TS 模板(V2)",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
